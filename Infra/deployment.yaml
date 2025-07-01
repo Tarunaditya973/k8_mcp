@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
       - name: mcp
-        image: nginx:1.14.2
+        image: localhost/k8s-mcp:v1
         ports:
         - containerPort: 4242
