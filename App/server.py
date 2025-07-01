@@ -2,9 +2,14 @@
 
 from mcp.server.fastmcp import FastMCP
 from kubernetes import client, config
+import os
 
 mcp = FastMCP("my-kind-cluster")
-config.load_kube_config()  # Uses ~/.kube/config
+
+if os.environ.get("KUBERNETES_SERVICE_HOST"):
+    config.load_incluster_config()
+else:
+    config.load_kube_config()
 core = client.CoreV1Api()
 
 @mcp.tool()
