@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mcp-deployment
+  namespace: kindmcp
+  labels:
+    app: mcp-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: mcp-deployment
+  template:
+    metadata:
+      labels:
+        app: mcp-deployment
+    spec:
+      containers:
+      - name: mcp
+        image: nginx:1.14.2
+        ports:
+        - containerPort: 4242
