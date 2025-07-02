@@ -13,18 +13,31 @@ else:
 core = client.CoreV1Api()
 
 @mcp.tool()
+def get_pods() -> str:
+    """Return pod names"""
+    return "pong"
+
+
+@mcp.tool()
 def cluster_name() -> str:
     """Return the current Kubernetes cluster name (server address)."""
+    print("Getting Cluster name....")
     return client.Configuration().host
 
 @mcp.tool()
 def pod_count(namespace: str | None = None) -> int:
     """Return the number of pods in a given namespace (or all namespaces)."""
+    print("Getting Pod Count.....")    
     if namespace:
+        print("namespace is ",namespace)
         pods = core.list_namespaced_pod(namespace)
     else:
+        print("Checking in all namespaces namespace")
         pods = core.list_pod_for_all_namespaces()
     return len(pods.items)
 
 if __name__ == "__main__":
-    mcp.run(transport="tcp", port=4242)  # Or use transport="tcp" or "websocket"
+    print("Starting mcp server....",flush=True)
+    mcp.run(transport="stdio")
+    print("started mcp server",flush=True)
+
