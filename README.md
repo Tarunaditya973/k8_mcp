@@ -3,7 +3,7 @@
 This is a lightweight MCP (Model Control Protocol) Server that interacts with your local Kubernetes cluster.  
 It doesn't run *inside* the cluster — instead, it runs locally and uses your kubeconfig to communicate with the cluster.
 
-###UPDATE: Will try to run the MCP Server inside the K8's cluster itself
+### UPDATE: Will try to run the MCP Server inside the K8's cluster itself, Please Ignore the INFRA directory for now
 
 ---
 
