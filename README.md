@@ -37,8 +37,8 @@ It doesn't run *inside* the cluster — instead, it runs locally and uses your k
    {
       "mcpServers":{
          "my-kind-cluster":{
-            "command": "C:/Users/tarun/AppData/Local/Programs/Python/Python313/python.exe",
-            "args": ["C:/Users/tarun/Desktop/k8_mcp/App/server.py"],
+            "command": "<path to python binary>",
+            "args": ["path to the python file"],
             "env": {
                "PYTHONPATH": "C:/Users/tarun/Desktop/k8_mcp/App",
                "PYTHONUNBUFFERED": "1"
