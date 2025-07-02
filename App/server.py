@@ -12,11 +12,6 @@ else:
     config.load_kube_config()
 core = client.CoreV1Api()
 
-@mcp.tool()
-def get_pods() -> str:
-    """Return pod names"""
-    return "pong"
-
 
 @mcp.tool()
 def cluster_name() -> str:
@@ -39,5 +34,4 @@ def pod_count(namespace: str | None = None) -> int:
 if __name__ == "__main__":
     print("Starting mcp server....",flush=True)
     mcp.run(transport="stdio")
-    print("started mcp server",flush=True)
 
