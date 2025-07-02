@@ -31,3 +31,18 @@ It doesn't run *inside* the cluster — instead, it runs locally and uses your k
    ```bash
    git clone https://github.com/yourusername/k8s-mcp-server.git
    cd k8s-mcp-server
+
+2. **Configurable Claude Desktop:
+   ```bash
+   {
+  "mcpServers": {
+    "my-kind-cluster": {
+      "command": "C:/Users/tarun/AppData/Local/Programs/Python/Python313/python.exe",
+      "args": ["C:/Users/tarun/Desktop/k8_mcp/App/server.py"],
+      "env": {
+        "PYTHONPATH": "C:/Users/tarun/Desktop/k8_mcp/App",
+        "PYTHONUNBUFFERED": "1"
+      }
+     }
+    }
+   }
